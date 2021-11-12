@@ -85,6 +85,7 @@ body.dark-theme{
     display: flex;
     align-items: center;
 }
+
 .change-theme{
     font-size: 1.25rem;
     color: var(--title-color);
@@ -391,7 +392,17 @@ button{
     font-weight: var(--font-medium);
 }
 
-.button:hover{
+.button2{
+    text-align: center;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    width: calc(8.5rem + 1vw);
+}
+
+.button:hover, .button2:hover{
     background-color: var(--first-color-alt);
 }
 
@@ -405,6 +416,8 @@ button{
     display: inline-flex;
     align-items: center;
 }
+
+
 
 /* ABOUT */
 
@@ -583,33 +596,22 @@ button{
 }
 
 /* PORTAFOLIO */
+
+.portafolio{
+    background-color: var(--home-color);
+    justify-content: center;
+    align-items: center;
+}
+
 .portafolio__container{
     overflow: initial;
+    margin-bottom: 8.5rem;
 }
 
 .portafolio__content{
-    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-around;
 }
-
-.portafolio__img{
-    width: 265px;
-    border-radius: .5rem;
-    justify-self: center;
-}
-
-.portafolio__title{
-    font-size: var(--h3-font-size);
-    margin-bottom: var(--mb-0-5);
-}
-
-.portafolio__description{
-    margin-bottom: var(--mb-0-75);
-}
-
-.portafolio__button:hover .button__icon{
-    transform: translateX(.25rem);
-}
-
 
 /* CONTACT */
 
@@ -909,6 +911,9 @@ button{
     .home__scroll{
         display: block;
     }
+    .about{
+        padding: 1rem;
+    }
     .about__container{
         column-gap: 5rem;
     }
@@ -923,6 +928,9 @@ button{
     }
     .about__buttons{
         justify-content: initial;
+    }
+    .skills{
+        padding: 1rem;
     }
     .qualification__tabs{
         justify-content: center;
@@ -939,6 +947,9 @@ button{
     .portafolio__content{
         align-items: center;
     }
+    .contact{
+        padding: 1rem;
+    }
     .footer__container{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -954,6 +965,7 @@ button{
 /*LARGE DEVICES*/
 
 @media screen and (min-width: 1024px){
+    
     .header,
     .footer__container{
         padding: 1rem;
