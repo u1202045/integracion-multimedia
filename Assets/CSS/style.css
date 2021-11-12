@@ -497,26 +497,6 @@ button{
     font-size: var(--normal-font-size);
 }
 
-.skills__bar,
-.skills__percentaje{
-    height: 5px;
-    border-radius: .25rem;
-}
-
-.skills__bar{
-    background-color: var(--first-color-lighter);
-}
-
-.skills__percentaje{
-    display: block;
-    background-color: var(--first-color);
-}
-
-.skills__p{
-    width: 100%;
-}
-
-
 .skills__close .skills__list{
     height: 0;
     overflow: hidden;
