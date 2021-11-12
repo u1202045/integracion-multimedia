@@ -4,7 +4,7 @@
 :root{
     --header-height: 3rem;
 
-    --hue-color: 10; /*180*/
+    --hue-color: 190; /*180*/
     --hue-color-dark: 200; /*180*/
 
     --first-color: hsl(var(--hue-color), 69%, 61%);
