@@ -816,17 +816,24 @@ content: "";
         align-items: center;
         justify-content: center;
     }
-    .home__content{
+    .home__container{
         flex-direction: column;
         align-items: center;
+    }
+    .home__content,
+    .home__content2{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .home__img{
+        order: 1;
+        width: 180px;
     }
     .home__data{
         text-align: center;
     }
-    .home__img{
-        display: none;
-    }
-    .home__content2{
+    .home__button{
         display: none;
     }
     .skills__title{
