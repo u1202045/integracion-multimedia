@@ -73,23 +73,6 @@ tabs.forEach (tab =>{
     })
 })
 
-/* SWIPER SLIDE */
-
-let swiper = new Swiper('.swiper', {
-    cssMode: true,
-    loop: true,
-
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-
-  });
-
   /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
