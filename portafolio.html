@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Icon-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!--Swiper-->
+    <link rel="stylesheet" href="Assets/CSS/swiper-bundle.min.css">
+
+    <!--Style-->
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+
+    <!--AOS Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <title>KeikiPet</title>
+</head>
+<body>
+    
+    <!--HEADER-->
+    <header class="header" id="header">
+        <nav class="nav container">
+
+            <div class="nav__btns">
+                
+                <!--Theme-->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+            </div>
+
+            <a href="index.html" class="nav__logo">Keiki<span>Pet</span></a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+
+                    <li class="nav__item">
+                        <a href="#pets" class="nav__link active-link">
+                            <i class="uil uil-search-alt nav__icon"></i>Pets
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>      
+
+            <div class="nav__btns">
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!--MAIN-->
+    <main class="main">
+
+        <section class="pest section" id="pets">
+            <h2 class="section__title">Pets</h2>
+            <span class="section__subtitle">Busca a tu amigo ideal</span>
+    
+            <div class="pets__container container grid">
+    
+                <div class="pets__cards">
+
+                    <div class="pets__card">
+                        <img src="Assets/IMG/pets/1.jpg" alt="">
+                        <h3 class="pets__name">Leia</h3>
+                        <h4>2 años</h4>
+                    </div>
+
+                    <div class="pets__card">
+                        <img src="Assets/IMG/pets/2.jpg" alt="">
+                        <h3 class="pets__name">Leia</h3>
+                        <h4>2 años</h4>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    
+
+
+    <!--CONTACT ME-->
+
+    <section class="contact section" id="contact">
+        <h2 class="section__title">Contacto</h2>
+        <span class="section__subtitle">Ponte en contacto</span>
+
+        <div class="contact__container container grid">
+            <div>
+                <div class="contact__information">
+                    <i class="uil uil-phone-alt contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">Número</h3>
+                        <span class="contact__subtitle">313 856 5531 | 537 22 24</span>
+                    </div>
+                </div>
+
+                <div class="contact__information">
+                    <i class="uil uil-envelope contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">Email</h3>
+                        <span class="contact__subtitle">petkeiki@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="contact__information">
+                    <i class="uil uil-map-marker contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">Ubicación</h3>
+                        <span class="contact__subtitle">Bogotá - Colombia</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <form action="mailto:skrillexkanht@gmail.com" method="POST" class="contact__form grid">
+
+                <div class="contact__inputs grid">
+                     <div class="contact__content">
+                         <label for="" class="contact__label">Nombre</label>
+                         <input type="text" name="name" class="contact__input" required> 
+
+                     </div>
+                     <div class="contact__content">
+                        <label for="" class="contact__label">Email</label>
+                        <input type="email" name="email" class="contact__input" required> 
+                          
+                    </div>
+                </div>
+
+                <div class="contact__content">
+                    <label for="" class="contact__label">Asunto</label>
+                    <input type="text" name="asunto" class="contact__input"> 
+                      
+                </div>
+                <div class="contact__content">
+                    <label for="" class="contact__label">Mensaje
+                        <textarea name="" id="" cols="0" rows="7" class="contact__input" required></textarea> 
+                    </label>
+                     
+                </div>
+
+                <div>
+                    <button type="submit" class="button button--flex">
+                        Enviar
+                        <i class="uil uil-message button__icon"></i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!--END MAIN-->
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                
+                <div class="footer__data">
+                    <h1 class="footer__title">KeikiPet</h1>
+                    <span class="footer_subtitle">Red Social para ayudar a los peludos del mundo</span>
+                </div>
+
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/brayan.beltran.7" target="blank" class="footer__social">
+                        <i class="uil uil-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/keiki_pet" target="blank" class="footer__social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/channel/UCg-lQMTED3jo9vcuF0tDAgg" target="blank" class="footer__social">
+                        <i class="uil uil-play"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">Bogota D.C. | Colombia<br>2021</p>
+        </div>
+    </footer>
+
+
+    <!--SCROLL TOP-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--AOS Animation-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!--SWIPER-->
+    <script src="Assets/JS/swiper-bundle.min.js"></script>
+    <!--JS-->
+    <script src="Assets/JS/main.js"></script>
+</body>
+</html>

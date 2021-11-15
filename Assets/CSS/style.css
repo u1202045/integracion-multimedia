@@ -1072,8 +1072,37 @@ button{
 }
 
 
+/*---------------------------------PETS------------------------------*/
 
+.pets__cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.pets__card{ 
+    margin: 0.5rem 0 0.5rem 0;
 
+    padding-bottom: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--first-color-second);
+    border-radius: 10px;
+}   
+.pets__name{
+    color: var(--first-color-lighter);
+}
+.pets__card img{ 
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0.5rem;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
 
 
 
