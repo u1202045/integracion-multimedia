@@ -598,20 +598,41 @@ button{
 /* PORTAFOLIO */
 
 .portafolio{
-    background-color: var(--home-color);
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+
+    background-color: var(--home-color);
+    height: 100vh;
+
 }
 
 .portafolio__container{
     overflow: initial;
-    margin-bottom: 8.5rem;
+    height: 92.5vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .portafolio__content{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    margin-bottom: 5rem;
 }
+
+.portafolio__persona,
+.portafolio__fundacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.75rem 0 0.75rem 0;
+}
+
 
 /* CONTACT */
 
@@ -941,11 +962,17 @@ button{
     .qualification__sections{
         grid-template-columns: .5fr;
     }
+    
     .portafolio__img{
         width: 320px;
     }
     .portafolio__content{
         align-items: center;
+        flex-direction: row;
+    }
+    .portafolio__persona,
+    .portafolio__fundacion{
+        margin: 0 0.75rem 0 0.75rem;
     }
     .contact{
         padding: 1rem;
