@@ -16,15 +16,15 @@
 
   const SaveUser =(user)=>{
 
-  db.collection("usuario").add({
-      user
-  })
-      .then((docRef) => {
-        MJSOK();
-      })
-      .catch((error) => {
-        MJERROR();
-  });
+    db.collection("usuario").add({
+        user
+    })
+    .then((docRef) => {
+      MJSOK();
+    })
+    .catch((error) => {
+      MJERROR();
+    });
 }
 
 const MJSOK =()=>{
@@ -42,7 +42,7 @@ const MJERROR =()=>{
         'error'
       )
 }
-
+/*
 $("#enviar").on('click',()=>{
   let usuario = $("#usuario");
   let email = $("#email");
@@ -52,11 +52,9 @@ $("#enviar").on('click',()=>{
     email
   } 
   SaveUser(user);
-})
+})*/
 
 
-
-/*
 const enviar = document.getElementById('enviar')
 
 enviar.addEventListener('click', (e) => {
@@ -71,4 +69,4 @@ enviar.addEventListener('click', (e) => {
 
     SaveUser(user);
 
-})*/
+})

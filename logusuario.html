@@ -17,11 +17,12 @@
     <!--AOS Animation-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+
     <!--FireBase-->
+  
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <!--Alerta-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>    
+
     <title>Log in usuario</title>
 </head>
 <body>
@@ -61,12 +62,17 @@
                             <!--<input type="email" name="email" class="logusuario__input" required> -->
                             <input type="email" name="email" id="email" class="logusuario__input">
                         </div>
+                        <div class="logusuario__content">
+                            <label for="" class="logusuario__label">contraseña</label>
+                            <!--<input type="email" name="email" class="logusuario__input" required> -->
+                            <input type="contraseña" name="contraseña" id="contraseña" class="logusuario__input">
+                        </div>
                     </div>
     
                     <div>
-                        <button type="submit" id= "enviar" class="button button--flex">Ingresar<i class="uil uil-message button__icon"></i>
-                        </button>
-<!--    
+                   <!--- <button type="submit" id= "enviar" class="button button--flex">Ingresar<i class="uil uil-message button__icon"></i> </button>-->
+                    <button onclick="guardar()">Registrar</button>
+  <!--
                         <a href="portafolio.html" class="button">
                             Ingresar
                         </a>-->
@@ -125,8 +131,9 @@
     
     <!--JS-->
     <script src="Assets/JS/main.js"></script>
-    <script src="Assets/JS/firebase.js"></script>
+    <script src="Assets/JS/firestore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-</body>
 
+
+</body> 
 </html>
