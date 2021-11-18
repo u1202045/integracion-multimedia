@@ -4,10 +4,11 @@ from firebase_admin import firestore
 
 from flask import Flask, render_template, request
 
-cred = credentials.Certificate("path/to/serviceAccountKey.json")
+cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
+
 app = Flask(__name__)
 
 """@app.route('/')
@@ -32,6 +33,7 @@ def log():
     email=request.form['E-mail']
     contraseña=request.form['Contraseña']
 
+    db.collection('users').add({'Mombre': nombre, 'E-mail': email, 'Contraseña': contraseña})
 
     return render_template("ver.html", Nombre=nombre, Email=email, Contraseña=contraseña)
 
