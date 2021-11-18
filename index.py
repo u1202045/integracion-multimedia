@@ -11,17 +11,24 @@ db = firestore.client()
 
 app = Flask(__name__)
 
-"""@app.route('/')
-def principal():
-    return "Bienvenid@ a mi pagina"""
+def guardar(correo):
+    lista = []
+    
+    if len(lista) == 0:
+        lista.append(correo)
+    else:
+        val = correo in list
+
+    return val
+
 
 @app.route('/')
 def principal():
     return render_template('index.html')
 
-@app.route('/datos')
-def datos():
-    return render_template('datos.html')
+@app.route('/datos_registro')
+def datos_registro():
+    return render_template('datos_registro.html')
 
 @app.route('/ver')
 def ver():
@@ -32,6 +39,8 @@ def log():
     nombre=request.form['Name']
     email=request.form['E-mail']
     contraseña=request.form['Contraseña']
+
+    guardar(email)
 
     db.collection('users').add({'Mombre': nombre, 'E-mail': email, 'Contraseña': contraseña})
 
