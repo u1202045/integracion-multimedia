@@ -143,6 +143,10 @@ textarea{
     color: var(--input-color-text);
 }
 
+input{
+    border: none;
+}
+
 span{
     color: var(--first-color);
 }
@@ -627,8 +631,8 @@ button{
     margin-bottom: 5rem;
 }
 
-.portafolio__persona,
-.portafolio__fundacion{
+.portafolio__registro,
+.portafolio__login{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -973,8 +977,8 @@ button{
         align-items: center;
         flex-direction: row;
     }
-    .portafolio__persona,
-    .portafolio__fundacion{
+    .portafolio__registro,
+    .portafolio__login{
         margin: 0 0.75rem 0 0.75rem;
     }
     .contact{

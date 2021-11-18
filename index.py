@@ -11,17 +11,6 @@ db = firestore.client()
 
 app = Flask(__name__)
 
-def guardar(correo):
-    lista = []
-    
-    if len(lista) == 0:
-        lista.append(correo)
-    else:
-        val = correo in list
-
-    return val
-
-
 @app.route('/')
 def principal():
     return render_template('index.html')
@@ -40,13 +29,18 @@ def log():
     email=request.form['E-mail']
     contraseña=request.form['Contraseña']
 
-    guardar(email)
-
     db.collection('users').add({'Mombre': nombre, 'E-mail': email, 'Contraseña': contraseña})
-
     return render_template("ver.html", Nombre=nombre, Email=email, Contraseña=contraseña)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+
+#Obtener datos Firestore
+'''doc = db.collection('users').get
+
+for doc in docs:
+    print(doc.to_dict())'''
+
 
 #python .\index.py
