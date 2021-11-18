@@ -1090,6 +1090,15 @@ button{
 
 /*---------------------------------PETS------------------------------*/
 
+.bienvenido{
+    text-align: center;
+}
+
+.ver__bienvenido{
+    color: var(--first-color);
+    font-size: 2.5rem;
+}
+
 .pets__cards{
     display: flex;
     align-items: center;

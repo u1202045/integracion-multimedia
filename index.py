@@ -1,5 +1,13 @@
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
 from flask import Flask, render_template, request
 
+cred = credentials.Certificate("path/to/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+
+db = firestore.client()
 app = Flask(__name__)
 
 """@app.route('/')
@@ -18,14 +26,14 @@ def datos():
 def ver():
     return render_template('ver.html')
 
-@app.route('/red', methods = ['POST'])
-def red():
-    Tiempo=request.form['Tiempo']
-    Ejercicios=request.form['Ejercicios']
-    NotaTest=request.form['NotaTest']
+@app.route('/log', methods = ['POST'])
+def log():
+    nombre=request.form['Name']
+    email=request.form['E-mail']
+    contraseña=request.form['Contraseña']
 
 
-    return render_template("ver.html", time=Tiempo, exer=Ejercicios, notaT=NotaTest)
+    return render_template("ver.html", Nombre=nombre, Email=email, Contraseña=contraseña)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

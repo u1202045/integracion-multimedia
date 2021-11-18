@@ -60,34 +60,43 @@
 
             <div class="logusuario__container container">
 
-                <form action="" method="POST" class="logusuario__form grid">
+                <form action="/log" method="POST" class="logusuario__form grid">
 
                     <div class="logusuario__inputs grid">
                         <div class="logusuario__content">
+                            <!--NOMBRE-->
                             <label for="" class="logusuario__label">Nombre</label>
-                            <!--<input type="text" name="name" class="logusuario__input" required> -->
-                            <input type="text" name="name" id="usuario" class="logusuario__input">
+                            <input type="text" name="Name" id="usuario" class="logusuario__input" required></br>
     
                         </div>
                         <div class="logusuario__content">
-                            <label for="" class="logusuario__label">Email</label>
-                            <!--<input type="email" name="email" class="logusuario__input" required> -->
-                            <input type="email" name="email" id="email" class="logusuario__input">
+                            <!--E-MAIL-->
+                            <label for="" class="logusuario__label">E-mail</label>
+                            <input type="email" name="E-mail" id="email" class="logusuario__input" required></br>
+
                         </div>
                         <div class="logusuario__content">
-                            <label for="" class="logusuario__label">contraseña</label>
-                            <!--<input type="email" name="email" class="logusuario__input" required> -->
-                            <input type="contraseña" name="contraseña" id="contraseña" class="logusuario__input">
+                            <!--CONTRASEÑA-->
+                            <label for="" class="logusuario__label">Contraseña</label>
+                            <input type="password" pattern=".{6,}"  name="Contraseña" id="contraseña" class="logusuario__input" required></br>
                         </div>
                     </div>
     
                     <div>
-                   <!--- <button type="submit" id= "enviar" class="button button--flex">Ingresar<i class="uil uil-message button__icon"></i> </button>-->
-                    <button onclick="guardar()">Registrar</button>
-  <!--
-                        <a href="portafolio.html" class="button">
-                            Ingresar
-                        </a>-->
+
+                        <input type="submit" value="Enviar" class="button button--flex" onclick="guardar()">
+
+
+                        <!--- <button type="submit" id= "enviar" class="button button--flex">Ingresar<i class="uil uil-message button__icon"></i> </button>-->
+                        <button onclick="guardar()">Registrar</button>
+                        
+                        <a href="http://127.0.0.1:5000/ver" onclick="guardar()" class="button button--flex">
+                            Registrarse<i class="uil uil-message button__icon"></i>
+                        </a>
+
+                        <!--<a href="portafolio.html" class="button">
+                                Ingresar
+                            </a>-->
     
 
                     </div>

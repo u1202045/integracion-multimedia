@@ -4,52 +4,6 @@
 
 {%block body %}
 
-<!--<strong>
-
-    <section class="visualizacion section">
-        <div class="visual__container container">
-
-            <div class="visualizacion__icon">
-                <a href="http://127.0.0.1:5017/datos" >
-                    <i class="uil uil-previous"></i>
-                </a>
-                <a href="http://127.0.0.1:5017/" class="">
-                    <i class="uil uil-step-forward"></i>
-                </a>
-            </div>
-            <div class="visual__content">
-                <div class="variables">
-                    <h1 class="visual__title"><span>{{recomen}}</span></h1>
-                    <h3>Tiempo de Estudio</h3>
-                    {{time}}
-                    <h3>Numero de Ejercicios</h3>
-                    {{exer}}
-                    <h3>Nota Test</h3>
-                    {{notaT}}
-
-                </div>
-
-                <div class="recomendacion__red">
-                    <div class="imgen">
-                        <img id="imagen" src="../static/img/{{ref}}.png" alt="imagen">
-                    </div>
-                </div>
-            </div>
-            
-            <p>Balance pasa</p>
-            {{pas}}
-            <p>Balance tiempo</p>
-            {{mtiempo}}
-            <p>Balance # Ejercicios</p>
-            {{mexer}}
-
-            <h4>Resultado final</h4>
-            {{resul}}
-        </div>
-    </section>
-
-</strong>-->
-
     <!--HEADER-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -93,7 +47,12 @@
     <!--MAIN-->
     <main class="main">
 
+        <section class="bienvenido section">
+            <h1 class="ver__bienvenido">Bienvenido {{Nombre}}</h1> 
+        </section>
+
         <section class="pest section" id="pets">
+
             <h2 class="section__title">Pets</h2>
             <span class="section__subtitle">Busca a tu amigo ideal</span>
 
