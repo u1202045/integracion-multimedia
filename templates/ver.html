@@ -1,26 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%extends './base.html' %}
 
-    <!--Icon-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
-    <!--Swiper-->
-    <link rel="stylesheet" href="Assets/CSS/swiper-bundle.min.css">
+{%block title%} Visualizacion de datos {%endblock%}
 
-    <!--Style-->
-    <link rel="stylesheet" href="Assets/CSS/style.css">
+{%block body %}
 
-    <!--AOS Animation-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <title>KeikiPet</title>
-</head>
-<body>
-    
+<!--<strong>
+
+    <section class="visualizacion section">
+        <div class="visual__container container">
+
+            <div class="visualizacion__icon">
+                <a href="http://127.0.0.1:5017/datos" >
+                    <i class="uil uil-previous"></i>
+                </a>
+                <a href="http://127.0.0.1:5017/" class="">
+                    <i class="uil uil-step-forward"></i>
+                </a>
+            </div>
+            <div class="visual__content">
+                <div class="variables">
+                    <h1 class="visual__title"><span>{{recomen}}</span></h1>
+                    <h3>Tiempo de Estudio</h3>
+                    {{time}}
+                    <h3>Numero de Ejercicios</h3>
+                    {{exer}}
+                    <h3>Nota Test</h3>
+                    {{notaT}}
+
+                </div>
+
+                <div class="recomendacion__red">
+                    <div class="imgen">
+                        <img id="imagen" src="../static/img/{{ref}}.png" alt="imagen">
+                    </div>
+                </div>
+            </div>
+            
+            <p>Balance pasa</p>
+            {{pas}}
+            <p>Balance tiempo</p>
+            {{mtiempo}}
+            <p>Balance # Ejercicios</p>
+            {{mexer}}
+
+            <h4>Resultado final</h4>
+            {{resul}}
+        </div>
+    </section>
+
+</strong>-->
+
     <!--HEADER-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -31,7 +60,7 @@
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
             </div>
 
-            <a href="index.html" class="nav__logo">Keiki<span>Pet</span></a>
+            <a href="http://127.0.0.1:5000/" class="nav__logo">Keiki<span>Pet</span></a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
@@ -67,14 +96,14 @@
         <section class="pest section" id="pets">
             <h2 class="section__title">Pets</h2>
             <span class="section__subtitle">Busca a tu amigo ideal</span>
-    
+
             <div class="pets__container container grid">
-    
+
                 <div class="pets__cards">
 
                     <div class="pets__card">
                         
-                        <img src="Assets/IMG/pets/1.jpg" alt="">
+                        <img src="../static/img/pets/1.jpg" alt="imagen">
 
                         <div class="pets__data">
                             <h3 class="pets__name">Waltt</h3>
@@ -96,7 +125,7 @@
 
                     <div class="pets__card">
                         
-                        <img src="Assets/IMG/pets/2.jpg" alt="">
+                        <img src="../static/img/pets/2.jpg" alt="imagen">
 
                         <div class="pets__data">
                             <h3 class="pets__name">Kira</h3>
@@ -119,7 +148,7 @@
 
             </div>
         </section>
-    
+
 
 
     <!--CONTACT ME-->
@@ -159,28 +188,28 @@
             <form action="mailto:skrillexkanht@gmail.com" method="POST" class="contact__form grid">
 
                 <div class="contact__inputs grid">
-                     <div class="contact__content">
-                         <label for="" class="contact__label">Nombre</label>
-                         <input type="text" name="name" class="contact__input" required> 
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Nombre</label>
+                        <input type="text" name="name" class="contact__input" required> 
 
-                     </div>
-                     <div class="contact__content">
+                    </div>
+                    <div class="contact__content">
                         <label for="" class="contact__label">Email</label>
                         <input type="email" name="email" class="contact__input" required> 
-                          
+                        
                     </div>
                 </div>
 
                 <div class="contact__content">
                     <label for="" class="contact__label">Asunto</label>
                     <input type="text" name="asunto" class="contact__input"> 
-                      
+                    
                 </div>
                 <div class="contact__content">
                     <label for="" class="contact__label">Mensaje
                         <textarea name="" id="" cols="0" rows="7" class="contact__input" required></textarea> 
                     </label>
-                     
+                    
                 </div>
 
                 <div>
@@ -226,21 +255,4 @@
         </div>
     </footer>
 
-
-    <!--SCROLL TOP-->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-
-    <!--AOS Animation-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
-    <!--SWIPER-->
-    <script src="Assets/JS/swiper-bundle.min.js"></script>
-    <!--JS-->
-    <script src="Assets/JS/main.js"></script>
-</body>
-</html>
+{%endblock%}

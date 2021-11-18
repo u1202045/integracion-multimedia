@@ -1,32 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%extends './base.html' %}
 
-    <!--Icon-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
-    <!--Swiper-->
-    <link rel="stylesheet" href="Assets/CSS/swiper-bundle.min.css">
+{%block title%} Log Usuario {%endblock%}
 
-    <!--Style-->
-    <link rel="stylesheet" href="Assets/CSS/style.css">
+{%block body %}
 
-    <!--AOS Animation-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+<!--<section class="data section">
+    <div class="data__container container">
+        <div class="data__content">
 
-    <!--FireBase-->
-  
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>    
+            <h1 class="data__title">Calculo de datos</h1>
 
-    <title>Log in usuario</title>
-</head>
-<body>
-    
+            <form action="/red" method="post" class="data__opcs">
+                <div class="data__opc">
+                    <label for="Tiempo">Ingrese Tiempo</label>
+                    <input type="number" step="0.01" name="Tiempo" min="6" max="10" required></br>
+                </div>
+
+                <div class="data__opc">
+                    <label for="Ejercicios">Ingrese Ejercicios</label>
+                    <input type="number" step="0.01" name="Ejercicios"min="6" max="10" required></br>
+                </div>
+
+
+                <div class="data__opc">
+                    <label for="NotaTest">Nota Test</label>
+                    <input type="number" step="0.01" name="NotaTest"min="0" max="10" required></br>
+                </div>
+
+                <div class="data__send">
+                    <input type="submit" value="Enviar" class="button" >
+                </div>
+
+            
+            </form>
+
+        </div>
+    </div>
+
+</section>-->
+
     <!--HEADER-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -36,7 +48,7 @@
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
             </div>
 
-            <a href="index.html" class="nav__logo">Keiki<span>Pet</span></a>
+            <a href="http://127.0.0.1:5000/" class="nav__logo">Keiki<span>Pet</span></a>
         </nav>
     </header>
 
@@ -117,23 +129,4 @@
 
     </main>
 
-    <!--SCROLL TOP-->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-
-    <!--AOS Animation-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
-    
-    <!--JS-->
-    <script src="Assets/JS/main.js"></script>
-    <script src="Assets/JS/firestore.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-</body> 
-</html>
+{%endblock%}

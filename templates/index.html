@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%extends './base.html' %}
 
-    <!--Icon-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
-    <!--Swiper-->
-    <link rel="stylesheet" href="Assets/CSS/swiper-bundle.min.css">
+{%block title%} Inicio {%endblock%}
 
-    <!--Style-->
-    <link rel="stylesheet" href="Assets/CSS/style.css">
+{%block body %}
 
-    <!--AOS Animation-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!--FireBase-->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <!--Alerta-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <title>KeikiPet</title>
-</head>
-<body>
-    
     <!--HEADER-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -120,7 +97,7 @@
             <div data-aos="fade-up" class="home__content2">
 
                 <div class="home__img">
-                    <img src="Assets/IMG/About.png" alt="">
+                    <img src="../static/img/Home.png" alt="imagen">
                 </div>
 
                 <div class="home__social">
@@ -161,7 +138,7 @@
         <span class="section__subtitle">¿Quienes somos?</span>
 
         <div class="about__container container grid">
-            <img src="Assets/IMG/Perfil.png" alt="" class="about__img">
+            <img src="../static/img/AboutUs.png" alt="imagen" class="about__img">
 
             <div class="about__data">
                 <p class="about__description">KeikiPet es una red social para personas que esten buscando su amigo peludo. Conectamos a los perros de todo el mundo . Ayudamos a encontrar la pareja perfecta o la cita de juegos para perros.
@@ -601,12 +578,12 @@
         <div class="portafolio__container container">
             <div class="portafolio__content">
 
-                <a href="logusuario.html" class="portafolio__persona button2">
+                <a href="http://127.0.0.1:5000/datos" class="portafolio__persona button2">
                     <i class="uil uil-user-circle qualification__icon"></i>
                     Persona
                 </a>
 
-                <a href="logfundacion.html" class="portafolio__fundacion button2">
+                <a href="http://127.0.0.1:5000/ver" class="portafolio__fundacion button2">
                     <i class="uil uil-clinic-medical qualification__icon"></i>
                     Fundación
                 </a>
@@ -652,28 +629,28 @@
             <form action="mailto:skrillexkanht@gmail.com" method="POST" class="contact__form grid">
 
                 <div class="contact__inputs grid">
-                     <div class="contact__content">
-                         <label for="" class="contact__label">Nombre</label>
-                         <input type="text" name="name" class="contact__input" required> 
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Nombre</label>
+                        <input type="text" name="name" class="contact__input" required> 
 
-                     </div>
-                     <div class="contact__content">
+                    </div>
+                    <div class="contact__content">
                         <label for="" class="contact__label">Email</label>
                         <input type="email" name="email" class="contact__input" required> 
-                          
+                        
                     </div>
                 </div>
 
                 <div class="contact__content">
                     <label for="" class="contact__label">Asunto</label>
                     <input type="text" name="asunto" class="contact__input"> 
-                      
+                    
                 </div>
                 <div class="contact__content">
                     <label for="" class="contact__label">Mensaje
                         <textarea name="" id="" cols="0" rows="7" class="contact__input" required></textarea> 
                     </label>
-                     
+                    
                 </div>
 
                 <div>
@@ -719,23 +696,4 @@
         </div>
     </footer>
 
-
-    <!--SCROLL TOP-->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-
-    <!--AOS Animation-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
-    <!--SWIPER-->
-    <script src="Assets/JS/swiper-bundle.min.js"></script>
-    <!--JS-->
-    <script src="Assets/JS/main.js"></script>
-    <script src="Assets/JS/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-</body>
-</html>
+{%endblock%}

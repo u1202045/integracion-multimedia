@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Icon-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        
+    <!--Swiper-->
+    <!--<link rel="stylesheet" href="Assets/CSS/swiper-bundle.min.css">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='swiper-bundle.min.css')}}">
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+
+    <!--AOS Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--FireBase-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <!--Alerta-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>{%block title%}{%endblock%}</title>
+
+</head>
+<body>
+
+    <main class="main">
+        {%block body %}
+        
+        {%endblock%}
+    </main>
+
+
+    <!--SCROLL TOP-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--AOS Animation-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!--SWIPER-->
+    <!--<script src="Assets/JS/swiper-bundle.min.js"></script>-->
+    <script src="{{url_for('static', filename='swiper-bundle.min.js')}}"></script>
+
+    <!--JS-->
+    <!--<script src="Assets/JS/main.js"></script>-->
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+
+    <!--<script src="Assets/JS/firebase.js"></script>-->
+    <script src="{{url_for('static', filename='firebase.js')}}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+</body>
+
+
+</html>
