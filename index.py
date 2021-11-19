@@ -19,6 +19,10 @@ def principal():
 def datos_registro():
     return render_template('datos_registro.html')
 
+@app.route('/datos_ingreso')
+def datos_ingreso():
+    return render_template('datos_ingreso.html')
+
 @app.route('/ver')
 def ver():
     return render_template('ver.html')
@@ -29,8 +33,27 @@ def log():
     email=request.form['E-mail']
     contraseña=request.form['Contraseña']
 
-    db.collection('users').add({'Mombre': nombre, 'E-mail': email, 'Contraseña': contraseña})
+    db.collection('users').add({'Mombre': nombre, 'E-mail': email, 'Contraseña': contraseña}) #Firesotre
     return render_template("ver.html", Nombre=nombre, Email=email, Contraseña=contraseña)
+
+
+@app.route('/log_in', methods = ['POST'])
+def log_in():
+    nombre=request.form['Name']
+    contraseña=request.form['Contraseña']
+
+    docs= db.collection('users').where("Mombre", "==", "Omar" ).get()
+    
+    for doc in docs:
+        lista = doc.to_dict()
+    
+    n = "'Contraseña' : '" + nombre + "'" 
+    c = 'hola'
+        
+
+    return render_template("ver.html", Nombre=n, Contraseña=c)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
