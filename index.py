@@ -33,7 +33,7 @@ def log():
     email=request.form['E-mail']
     contraseña=request.form['Contraseña']
 
-    db.collection('users').add({'Mombre': nombre, 'E-mail': email, 'Contraseña': contraseña}) #Firesotre
+    db.collection('users').add({'Nombre': nombre, 'E-mail': email, 'Contraseña': contraseña}) #Firesotre
     return render_template("ver.html", Nombre=nombre, Email=email, Contraseña=contraseña)
 
 
@@ -42,16 +42,22 @@ def log_in():
     nombre=request.form['Name']
     contraseña=request.form['Contraseña']
 
-    docs= db.collection('users').where("Mombre", "==", "Omar" ).get()
-    
-    for doc in docs:
-        lista = doc.to_dict()
-    
-    n = "'Contraseña' : '" + nombre + "'" 
-    c = 'hola'
-        
+    docs= db.collection('users').where("Nombre", "==", nombre).get()
 
-    return render_template("ver.html", Nombre=n, Contraseña=c)
+    for d in docs:
+        s = d.to_dict()
+        print('Nombre: {} \n Correo: {} \n Contraseña: {}\n'.format(s['Nombre'],s['E-mail'],s['Contraseña']))
+
+    if s['Nombre'] == nombre and s['Contraseña'] == contraseña:
+        y = 'Verdadero :)'
+        return render_template("ver.html", Nombre=nombre)
+
+    else:
+        return render_template("datos_ingreso.html")
+        
+    
+    
+
 
 
 

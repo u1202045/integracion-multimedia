@@ -1099,7 +1099,7 @@ button{
 }
 
 .ver__bienvenido{
-    color: var(--first-color);
+    color: var(--title-color);
     font-size: 2.5rem;
 }
 
