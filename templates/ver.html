@@ -14,7 +14,9 @@
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
             </div>
 
-            <a href="http://127.0.0.1:5000/" class="nav__logo">Keiki<span>Pet</span></a>
+            <a href="http://127.0.0.1:5000/" class="nav__logo">
+                Keiki<span>Pet</span>
+            </a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
@@ -56,6 +58,14 @@
 
         <section class="bienvenido section">
             <h1 class="ver__bienvenido">Bienvenido <span>{{Nombre}}</span></h1> 
+
+            <div class="b__scroll">
+                <a href="#pets" class="b__scroll-button button--flex">
+                    <i class="uil uil-eye b__scroll-mouse"></i>
+                    <span class="b__scroll-name">Mira tus mascotas</span>
+                    <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                </a>
+            </div>
         </section>
 
         <section class="agrega__mascota section">
@@ -67,7 +77,7 @@
         <section class="pets section" id="pets">
 
             <h2 class="section__title">Pets</h2>
-            <span class="section__subtitle">Busca a tu amigo ideal</span>
+            <span class="section__subtitle">Todas tus mascotas</span>
 
             <div data-aos="fade-up" class="pets__container container grid">
 
@@ -129,11 +139,19 @@
             <div data-aos="fade-up" class="perfil__container container">
 
                 <div class="perfil__data">
-                    <p class="perfil__info"><span>Nombre: </span>{{Nombre}}</p>
-                    <p class="perfil__info"><span>Correo: </span>{{Email}}</p>
-                    <p class="perfil__info"><span>Nickname: </span>{{Nickname}}</p>
-                    <p class="perfil__info"><span>Contraseña: </span>{{Contraseña}}</p>
+
+                    <div class="perfil__infor">
+                        <p class="perfil__info"><span>Nombre: </span>{{Nombre}}</p>
+                        <p class="perfil__info"><span>Correo: </span>{{Email}}</p>
+                        <p class="perfil__info"><span>Nickname: </span>{{Nickname}}</p>
+                        <p class="perfil__info"><span>Contraseña: </span>{{Contraseña}}</p>
+                    </div>
+
+                    <div class="perfil__insignia">
+                        <img src="../static/img/Insignia.png" alt="imagen">
+                    </div>
                 </div>
+
             </div>
 
         </section>

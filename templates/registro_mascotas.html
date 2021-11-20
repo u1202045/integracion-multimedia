@@ -13,7 +13,10 @@
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
             </div>
 
-            <a href="http://127.0.0.1:5000/" class="nav__logo">Keiki<span>Pet</span></a>
+            <a href="http://127.0.0.1:5000/ver" class="nav__logo">
+                <i class="uil uil-angle-left nav__icon"></i>
+                Keiki<span>Pet</span>
+            </a>
         </nav>
     </header>
 
@@ -29,11 +32,11 @@
 
                     <div class="logusuario__inputs grid">
 
-                        <div class="logusuario__content">
+                        <div class="logusuario__content" style="text-align: center;">
                             <!--NOMBRE-->
-                            {{Nombre}}
-                            
+                            <h3><span>{{Nombre}}</span></h3>
                         </div>
+
                         <div class="logusuario__content">
                             <!--NOMBRE-->
                             <label for="" class="logusuario__label">Nombre mascota</label>
@@ -41,27 +44,32 @@
     
                         </div>
                         <div class="logusuario__content">
-                            <!--E-MAIL-->
+                            <!--EDAD-->
                             <label for="" class="logusuario__label">Edad</label>
                             <input type="text" name="Edad" id="edad" class="logusuario__input" required></br>
 
                         </div>
 
-                        <div class="logusuario__content">
-                            <!--NICKNAME-->
+                        <div class="logusuario__content select">
+                            <!--GENERO-->
                             <label for="" class="logusuario__label">Sexo</label>
-                            <input type="text" name="Sexo" id="sexo" class="logusuario__input" required></br>
+                            <!--<input type="text" name="Sexo" id="sexo" class="logusuario__input" required></br>-->
     
+                            <select name="Sexo">
+                                <option name="Sexo" id="Sexo" value="Hembra">Hembra</option>
+                                <option name="Sexo" id="Sexo" value="Macho" selected>Macho</option>
+                            </select>
+                            <i></i>
                         </div>
 
                         <div class="logusuario__content">
-                            <!--CONTRASEÑA-->
+                            <!--DESCRIPCION-->
                             <label for="" class="logusuario__label">Descripcion</label>
                             <input type="text" name="Descripcion" id="contraseña" class="logusuario__input" required></br>
                         </div>
 
                         <div class="logusuario__content">
-                            <!--CONTRASEÑA-->
+                            <!--CUALIDADES-->
                             <label for="" class="logusuario__label">Cualidades</label>
                             <input type="text" name="Cualidades" id="Cualidades" class="logusuario__input" required></br>
                         </div>

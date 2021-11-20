@@ -140,10 +140,29 @@ img{
 input,
 textarea{
     color: var(--input-color-text);
+    font: var(--body-font);
 }
 
 input{
     border: none;
+}
+
+select {
+    background: transparent;
+    border: none;
+    font-size: var(--font-medium);
+    height: 30px;
+    padding: 5px;
+    width: 100%;
+
+    font-family: var(--body-font);
+    color: var(--title-color);
+}
+
+select:focus{ outline: none;}
+
+option{
+    background-color: var(--body-color);
 }
 
 span{
@@ -399,7 +418,6 @@ button{
 }
 
 .button2{
-    text-align: center;
     background-color: var(--first-color);
     color: #fff;
     padding: 0.5rem;
@@ -639,6 +657,11 @@ button{
     margin: 0.75rem 0 0.75rem 0;
 }
 
+.boton{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
 /* CONTACT */
 
@@ -1102,6 +1125,31 @@ button{
     font-size: 2.5rem;
 }
 
+
+.b__scroll-button{
+    color: var(--first-color);
+    transition: .3s;
+}
+
+.b__scroll-button:hover{
+    transform: translateY(.25rem);
+}
+
+.b__scroll-mouse{
+    font-size: 1rem;
+}
+
+.b__scroll-name{
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin: var(--mb-0-25);
+}
+.b__scroll-arrow{
+    font-size: 1.25rem;
+}
+
+
 .agrega__mascota{
     text-align: center;
 }
@@ -1162,11 +1210,45 @@ button{
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .perfil__info{
     font-size: var(--font-medium);
     margin: 0.5rem;
+}
+
+.perfil__insignia{
+    width: 10rem;
+    margin: 0.5rem;
+}
+
+.perfil__data{
+    display: flex;
+    flex-direction: column;
+}
+
+.select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+    overflow: hidden;
+}
+
+@media screen and (max-width: 500px){
+    .perfil__data{
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .perfil__data{
+        flex-direction: row;
+    }
 }
 
 @media screen and (min-width: 768px){
@@ -1176,7 +1258,9 @@ button{
     .pets__card{ 
         margin: 0 0.5rem 0 0.5rem;
     }
-    
+    .perfil__data{
+        flex-direction: row;
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -1186,7 +1270,9 @@ button{
     .pets__card{ 
         margin: 0 0.5rem 0 0.5rem;
     }
-    
+    .perfil__data{
+        flex-direction: row;
+    }
 }
 
 

@@ -48,23 +48,6 @@ def log():
     return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
 
 
-@app.route('/log_mascota/<string:Nombre>/', methods = ['POST'])
-def log_mascota(Nombre):
-    #Nombre=request.form['Nombre']
-    nombre_mascota=request.form['Name']
-    edad=request.form['Edad']
-    sexo=request.form['Sexo']
-    descripcion=request.form['Descripcion']
-    cualidades=request.form['Cualidades']
-    
-
-    data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
-    db.collection('users').document(Nombre).collection(nombre_mascota).document('Datos').set(data_mascota)
-
-    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades)
-
-
-
 @app.route('/log_in', methods = ['POST'])
 def log_in():
     nickname=request.form['Nickname']
@@ -85,9 +68,32 @@ def log_in():
 
     else:
         return render_template("datos_ingreso.html")
-        
+
+
+@app.route('/log_mascota/<string:Nombre>/', methods = ['POST'])
+def log_mascota(Nombre):
+    #Nombre=request.form['Nombre']
+    nombre_mascota=request.form['Name']
+    edad=request.form['Edad']
+    sexo=request.form['Sexo']
+    descripcion=request.form['Descripcion']
+    cualidades=request.form['Cualidades']
     
-    
+    docs= db.collection('users').where("Nombre", "==", Nombre).get()
+
+    for d in docs:
+        s = d.to_dict()
+        print('Nombre: {} \n Correo: {} \n Nickname: {} \n Contraseña: {}\n'.format(s['Nombre'],s['E-mail'], s['Nickname'],s['Contraseña']))
+
+    nickname=s['Nickname']
+    email = s['E-mail']
+    contraseña=s['Contraseña']
+
+    data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
+    db.collection('users').document(Nombre).collection(nombre_mascota).document('Datos').set(data_mascota)
+
+    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, Nombre=Nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
+
 
 
 if __name__ == '__main__':
