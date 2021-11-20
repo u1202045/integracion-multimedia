@@ -25,9 +25,15 @@
 
             <div data-aos="fade-up" class="logusuario__container container">
 
-                <form action="/log_mascota" method="POST" class="logusuario__form grid">
+                <form action="/log_mascota/{{Nombre}}/" method="POST" class="logusuario__form grid">
 
                     <div class="logusuario__inputs grid">
+
+                        <div class="logusuario__content">
+                            <!--NOMBRE-->
+                            {{Nombre}}
+                            
+                        </div>
                         <div class="logusuario__content">
                             <!--NOMBRE-->
                             <label for="" class="logusuario__label">Nombre mascota</label>

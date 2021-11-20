@@ -31,9 +31,9 @@ def ver():
 def perfil():
     return render_template('perfil.html')
 
-@app.route('/registro_mascotas')
-def registro_mascotas():
-    return render_template('registro_mascotas.html')
+@app.route('/registro_mascotas/<string:Nombre>/')
+def registro_mascotas(Nombre):
+    return render_template('registro_mascotas.html', Nombre=Nombre)
 
 @app.route('/log', methods = ['POST'])
 def log():
@@ -48,9 +48,10 @@ def log():
     return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
 
 
-@app.route('/log_mascota/<Nombre>', methods = ['POST'])
+@app.route('/log_mascota/<string:Nombre>/', methods = ['POST'])
 def log_mascota(Nombre):
-    nombre_mascota=request.form.set['Name']
+    #Nombre=request.form['Nombre']
+    nombre_mascota=request.form['Name']
     edad=request.form['Edad']
     sexo=request.form['Sexo']
     descripcion=request.form['Descripcion']
@@ -58,7 +59,7 @@ def log_mascota(Nombre):
     
 
     data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
-    db.collection('users').document('Fundación Peludos').collection(nombre_mascota).document('Datos').set(data_mascota)
+    db.collection('users').document(Nombre).collection(nombre_mascota).document('Datos').set(data_mascota)
 
     return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades)
 
