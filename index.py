@@ -45,22 +45,21 @@ def log():
     data = {'Nombre': nombre, 'E-mail': email, 'Nickname': nickname, 'Contraseña': contraseña} #Firesotre
 
     db.collection('users').document(nombre).set(data)
-    db.collection('users').document(nombre).collection('Canelita').add
     return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
 
-@app.route('/log_mascota', methods = ['POST'])
-def log_mascota():
-    nombre_mascota=request.form['Name']
+
+@app.route('/log_mascota/<Nombre>', methods = ['POST'])
+def log_mascota(Nombre):
+    nombre_mascota=request.form.set['Name']
     edad=request.form['Edad']
     sexo=request.form['Sexo']
     descripcion=request.form['Descripcion']
     cualidades=request.form['Cualidades']
     
-    nombre = log.get('Name')
 
     data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
+    db.collection('users').document('Fundación Peludos').collection(nombre_mascota).document('Datos').set(data_mascota)
 
-    db.collection('users').document(nombre).collection(nombre_mascota).set(data_mascota)
     return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades)
 
 
