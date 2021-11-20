@@ -23,7 +23,7 @@
             <h2 class="section__title">Check <span>in</span> Usuario</h2>
             <span class="section__subtitle">¡Haz parte de nuestra comunidad!</span>
 
-            <div class="logusuario__container container">
+            <div data-aos="fade-up" class="logusuario__container container">
 
                 <form action="/log" method="POST" class="logusuario__form grid">
 
@@ -40,6 +40,14 @@
                             <input type="email" name="E-mail" id="email" class="logusuario__input" required></br>
 
                         </div>
+
+                        <div class="logusuario__content">
+                            <!--NICKNAME-->
+                            <label for="" class="logusuario__label">Nickname</label>
+                            <input type="text" name="Nickname" id="usuario" class="logusuario__input" required></br>
+    
+                        </div>
+
                         <div class="logusuario__content">
                             <!--CONTRASEÑA-->
                             <label for="" class="logusuario__label">Contraseña</label>
@@ -48,7 +56,7 @@
                     </div>
     
                     <div>
-                        <input type="submit" value="Enviar" class="button button--flex">
+                        <input type="submit" value="Registrarse" class="button button--flex">
                     </div>
     
                 </form>

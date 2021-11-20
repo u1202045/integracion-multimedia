@@ -20,29 +20,49 @@
     <main class="main">
 
         <section class="logusuario section">
-            <h2 class="section__title">Log <span>in</span> Usuario</h2>
-            <span class="section__subtitle">¡Ingresa!</span>
+            <h2 class="section__title">Check <span>in</span> Usuario</h2>
+            <span class="section__subtitle">¡Haz parte de nuestra comunidad!</span>
 
             <div data-aos="fade-up" class="logusuario__container container">
 
-                <form action="/log_in" method="POST" class="logusuario__form grid">
+                <form action="/log_mascota" method="POST" class="logusuario__form grid">
 
                     <div class="logusuario__inputs grid">
                         <div class="logusuario__content">
-                            <!--NICKNAME-->
-                            <label for="" class="logusuario__label">Nickname</label>
-                            <input type="text" name="Nickname" id="usuario" class="logusuario__input" required></br>
+                            <!--NOMBRE-->
+                            <label for="" class="logusuario__label">Nombre mascota</label>
+                            <input type="text" name="Name" id="usuario" class="logusuario__input" required></br>
     
                         </div>
                         <div class="logusuario__content">
+                            <!--E-MAIL-->
+                            <label for="" class="logusuario__label">Edad</label>
+                            <input type="text" name="Edad" id="edad" class="logusuario__input" required></br>
+
+                        </div>
+
+                        <div class="logusuario__content">
+                            <!--NICKNAME-->
+                            <label for="" class="logusuario__label">Sexo</label>
+                            <input type="text" name="Sexo" id="sexo" class="logusuario__input" required></br>
+    
+                        </div>
+
+                        <div class="logusuario__content">
                             <!--CONTRASEÑA-->
-                            <label for="" class="logusuario__label">Contraseña</label>
-                            <input type="password" pattern=".{6,}"  name="Contraseña" id="contraseña" class="logusuario__input" required></br>
+                            <label for="" class="logusuario__label">Descripcion</label>
+                            <input type="text" name="Descripcion" id="contraseña" class="logusuario__input" required></br>
+                        </div>
+
+                        <div class="logusuario__content">
+                            <!--CONTRASEÑA-->
+                            <label for="" class="logusuario__label">Cualidades</label>
+                            <input type="text" name="Cualidades" id="Cualidades" class="logusuario__input" required></br>
                         </div>
                     </div>
     
                     <div>
-                        <input type="submit" value="Ingresa" class="button button--flex">
+                        <input type="submit" value="Registrar" class="button button--flex">
                     </div>
     
                 </form>

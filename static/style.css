@@ -20,8 +20,7 @@
     --home-color: hsl(var(--hue-color), 0%, 97%);
     --box-shadow-color: rgba(0,0,0,.15);
     --input-color-text:hsl(var(--hue-color), 8%, 45%);
-    --color-card: hsl(var(--hue-color), 70%, 50%);
-
+    --color-card: hsl(var(--hue-color), 69%, 50%);
 
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
@@ -1151,6 +1150,20 @@ button{
     justify-content: space-around;
 }
 
+.perfil{
+    background-color: var(--home-color);
+}
+.perfil__data{
+    background-color: var(--body-color);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+}
+
+.perfil__info{
+    font-size: var(--font-medium);
+    margin: 0.5rem;
+}
 
 @media screen and (min-width: 768px){
     .pets__cards{

@@ -26,10 +26,17 @@
                     </li>
 
                     <li class="nav__item">
+                        <a href="#perfil" class="nav__link">
+                            <i class="uil uil-user-square nav__icon"></i> Perfil
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
                         <a href="#contact" class="nav__link">
                             <i class="uil uil-message nav__icon"></i> Contact
                         </a>
                     </li>
+
                 </ul>
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>      
@@ -51,12 +58,16 @@
             <h1 class="ver__bienvenido">Bienvenido <span>{{Nombre}}</span></h1> 
         </section>
 
-        <section class="pest section" id="pets">
+        <section>
+            <a href="http://127.0.0.1:5000/registro_mascotas">Agrega</a>
+        </section>
+
+        <section class="pets section" id="pets">
 
             <h2 class="section__title">Pets</h2>
             <span class="section__subtitle">Busca a tu amigo ideal</span>
 
-            <div class="pets__container container grid">
+            <div data-aos="fade-up" class="pets__container container grid">
 
                 <div class="pets__cards">
 
@@ -108,7 +119,22 @@
             </div>
         </section>
 
+        <section class="perfil section" id="perfil">
 
+            <h2 class="section__title">Perfil</h2>
+            <span class="section__subtitle">Informacion Personal</span>
+
+            <div data-aos="fade-up" class="perfil__container container">
+
+                <div class="perfil__data">
+                    <p class="perfil__info"><span>Nombre: </span>{{Nombre}}</p>
+                    <p class="perfil__info"><span>Correo: </span>{{Email}}</p>
+                    <p class="perfil__info"><span>Nickname: </span>{{Nickname}}</p>
+                    <p class="perfil__info"><span>Contraseña: </span>{{Contraseña}}</p>
+                </div>
+            </div>
+
+        </section>
 
     <!--CONTACT ME-->
 
@@ -116,7 +142,7 @@
         <h2 class="section__title">Contacto</h2>
         <span class="section__subtitle">Ponte en contacto</span>
 
-        <div class="contact__container container grid">
+        <div data-aos="fade-up" class="contact__container container grid">
             <div>
                 <div class="contact__information">
                     <i class="uil uil-phone-alt contact__icon"></i>

@@ -27,30 +27,61 @@ def datos_ingreso():
 def ver():
     return render_template('ver.html')
 
+@app.route('/perfil')
+def perfil():
+    return render_template('perfil.html')
+
+@app.route('/registro_mascotas')
+def registro_mascotas():
+    return render_template('registro_mascotas.html')
+
 @app.route('/log', methods = ['POST'])
 def log():
     nombre=request.form['Name']
     email=request.form['E-mail']
+    nickname=request.form['Nickname']
     contraseña=request.form['Contraseña']
+    
+    data = {'Nombre': nombre, 'E-mail': email, 'Nickname': nickname, 'Contraseña': contraseña} #Firesotre
 
-    db.collection('users').add({'Nombre': nombre, 'E-mail': email, 'Contraseña': contraseña}) #Firesotre
-    return render_template("ver.html", Nombre=nombre, Email=email, Contraseña=contraseña)
+    db.collection('users').document(nombre).set(data)
+    db.collection('users').document(nombre).collection('Canelita').add
+    return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
+
+@app.route('/log_mascota', methods = ['POST'])
+def log_mascota():
+    nombre_mascota=request.form['Name']
+    edad=request.form['Edad']
+    sexo=request.form['Sexo']
+    descripcion=request.form['Descripcion']
+    cualidades=request.form['Cualidades']
+    
+    nombre = log.get('Name')
+
+    data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
+
+    db.collection('users').document(nombre).collection(nombre_mascota).set(data_mascota)
+    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades)
+
 
 
 @app.route('/log_in', methods = ['POST'])
 def log_in():
-    nombre=request.form['Name']
+    nickname=request.form['Nickname']
     contraseña=request.form['Contraseña']
 
-    docs= db.collection('users').where("Nombre", "==", nombre).get()
+    docs= db.collection('users').where("Nickname", "==", nickname).get()
 
     for d in docs:
         s = d.to_dict()
-        print('Nombre: {} \n Correo: {} \n Contraseña: {}\n'.format(s['Nombre'],s['E-mail'],s['Contraseña']))
+        print('Nombre: {} \n Correo: {} \n Nickname: {} \n Contraseña: {}\n'.format(s['Nombre'],s['E-mail'], s['Nickname'],s['Contraseña']))
 
-    if s['Nombre'] == nombre and s['Contraseña'] == contraseña:
+    nombre=s['Nombre']
+    email = s['E-mail']
+
+    if s['Nickname'] == nickname and s['Contraseña'] == contraseña:
         y = 'Verdadero :)'
-        return render_template("ver.html", Nombre=nombre)
+        return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
 
     else:
         return render_template("datos_ingreso.html")
@@ -59,17 +90,8 @@ def log_in():
     
 
 
-
-
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-
-
-#Obtener datos Firestore
-'''doc = db.collection('users').get
-
-for doc in docs:
-    print(doc.to_dict())'''
 
 
 #python .\index.py
