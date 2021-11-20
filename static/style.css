@@ -387,13 +387,13 @@ span{
 .home__scroll-arrow{
     font-size: 1.25rem;
 }
-.home__button{
+/*.home__button{
     display: flex;
 }
 .home__img{
     display: block;
     margin: auto;
-}
+}*/
 
 /* BUTTONS */
 
@@ -834,9 +834,9 @@ button{
     .home__data{
         text-align: center;
     }
-    .home__button{
+    /*.home__button{
         display: none;
-    }
+    }*/
     .skills__title{
         font-size: var(--normal-font-size);
     }
@@ -874,10 +874,10 @@ button{
     .home__data{
         text-align: center;
     }
-    .home__button{
+    /*.home__button{
         flex-direction: row;
         gap: 1.5rem;
-    }
+    }*/
     .about__container,
     .portafolio__content,
     .contact__container,
