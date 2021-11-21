@@ -1,6 +1,9 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from random import sample
+
+import random
 
 from flask import Flask, render_template, request
 
@@ -10,6 +13,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def principal():
@@ -62,6 +66,12 @@ def log_in():
     nombre=s['Nombre']
     email = s['E-mail']
 
+    docs2= db.collection('Canelita').where("Nombre", "==", "Canelita").get()
+    for d in docs2:
+        s = d.to_dict()
+        print('Nombre: {} \n Edad: {} \n Sexo: {} \n Descripcion: {}\n Cualidades: {}\n'.format(s['Nombre'],s['Edad'], s['Sexo'],s['Descripcion'],s['Cualidades']))
+
+
     if s['Nickname'] == nickname and s['Contraseña'] == contraseña:
         y = 'Verdadero :)'
         return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
@@ -78,7 +88,9 @@ def log_mascota(Nombre):
     sexo=request.form['Sexo']
     descripcion=request.form['Descripcion']
     cualidades=request.form['Cualidades']
-    
+
+    ids=sample(range(80,100),10)
+
     docs= db.collection('users').where("Nombre", "==", Nombre).get()
 
     for d in docs:
@@ -92,8 +104,7 @@ def log_mascota(Nombre):
     data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
     db.collection('users').document(Nombre).collection(nombre_mascota).document('Datos').set(data_mascota)
 
-    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, Nombre=Nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
-
+    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, Nombre=Nombre, Email=email, Nickname = nickname, Contraseña=contraseña, id=ids)
 
 
 if __name__ == '__main__':

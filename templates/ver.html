@@ -81,55 +81,96 @@
 
             <div data-aos="fade-up" class="pets__container container grid">
 
-                <div class="pets__cards">
+                <div class="pets__cards" id="cards">
 
-                    <div class="pets__card">
+                    <div class="pets__card"  id="card">
                         
                         <img src="../static/img/pets/1.jpg" alt="imagen">
 
-                        <div class="pets__data">
+                        <div class="pets__data" id="data">
                             <h3 class="pets__name">Waltt</h3>
                             <p class="pets__letter">Adulto</p>
-                            <p class="pets__letter">Macho</p>
                         </div>
 
-                        <div class="pets__opc">
-                            <a href="" target="blank" class="opc1">
+                        <div class="pets__opc" id="opci">
+                            <a href="" target="blank" class="opc1" id="opc">
                                 <i class="uil uil-comment-heart pets__icon"></i>
                             </a>
-                            <a href="" target="blank" class="opc2">
+                            <a href="" target="blank" class="opc2" id="opc">
                                 <i class="uil uil-bookmark pets__icon"></i>
                             </a>
                         </div>
-
                     </div>
-
-
-                    <div class="pets__card">
-                        
-                        <img src="../static/img/pets/2.jpg" alt="imagen">
-
-                        <div class="pets__data">
-                            <h3 class="pets__name">Kira</h3>
-                            <p class="pets__letter">Adulto</p>
-                            <p class="pets__letter">Hembra</p>
-                        </div>
-
-                        <div class="pets__opc">
-                            <a href="" target="blank" class="opc1">
-                                <i class="uil uil-comment-heart pets__icon"></i>
-                            </a>
-                            <a href="" target="blank" class="opc2">
-                                <i class="uil uil-bookmark pets__icon"></i>
-                            </a>
-                        </div>
-
-                    </div>
-
                 </div>
 
             </div>
         </section>
+
+        <button id="btn">add</button>
+
+        <script>
+            $("#btn").addEventListener("click",function(){
+
+                var img=document.createElement('img');
+                img.setAttribute("src", "../static/img/pets/1.jpg");
+
+                var card=document.createElement('div');
+                card.setAttribute("class", "pets__card");
+                card.setAttribute("id", "card1");
+
+                var data=document.createElement('div');
+                data.setAttribute("class","pets__data")
+                data.setAttribute("id","data1")
+
+                var opcion=document.createElement('div');
+                opcion.setAttribute("class","pets__opc")
+                opcion.setAttribute("id","opci1")
+
+                var Name=document.createElement('h3');
+                Name.setAttribute("class", "pets__name");
+                var n=document.createTextNode("Nombre");
+                Name.appendChild(n);
+
+                var Edad=document.createElement('p');
+                Edad.setAttribute("class", "pets__letter");
+                var e=document.createTextNode("Edad");
+                Edad.appendChild(e);
+
+
+                var link1_1=document.createElement('i');
+                link1_1.setAttribute("class","uil uil-comment-heart pets__icon");
+                var link1_2=document.createElement('i');
+                link1_2.setAttribute("class","uil uil-bookmark pets__icon");
+
+                var link1=document.createElement('a');
+                link1.setAttribute("class","opc1");
+                link1.setAttribute("id","opc1");
+                var link2=document.createElement('a');
+                link2.setAttribute("class","opc1");
+                link2.setAttribute("id","opc2");
+
+
+                $("#cards").appendChild(card);
+
+                $("#card1").appendChild(img);
+                $("#card1").appendChild(data);
+                $("#card1").appendChild(opcion);
+
+                $("#data1").appendChild(Name);
+                $("#data1").appendChild(Edad);
+
+                $("#opci1").appendChild(link1);
+                $("#opci1").appendChild(link2);
+
+                $("#opc1").appendChild(link1_1);
+                $("#opc2").appendChild(link1_2);
+            })
+
+            function $(selector){
+                return document.querySelector(selector);
+            }
+
+        </script>
 
         <section class="perfil section" id="perfil">
 
@@ -156,77 +197,77 @@
 
         </section>
 
-    <!--CONTACT ME-->
+        <!--CONTACT ME-->
 
-    <section class="contact section" id="contact">
-        <h2 class="section__title">Contacto</h2>
-        <span class="section__subtitle">Ponte en contacto</span>
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contacto</h2>
+            <span class="section__subtitle">Ponte en contacto</span>
 
-        <div data-aos="fade-up" class="contact__container container grid">
-            <div>
-                <div class="contact__information">
-                    <i class="uil uil-phone-alt contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">Número</h3>
-                        <span class="contact__subtitle">313 856 5531 | 537 22 24</span>
+            <div data-aos="fade-up" class="contact__container container grid">
+                <div>
+                    <div class="contact__information">
+                        <i class="uil uil-phone-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Número</h3>
+                            <span class="contact__subtitle">313 856 5531 | 537 22 24</span>
+                        </div>
                     </div>
+
+                    <div class="contact__information">
+                        <i class="uil uil-envelope contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">petkeiki@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact__information">
+                        <i class="uil uil-map-marker contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Ubicación</h3>
+                            <span class="contact__subtitle">Bogotá - Colombia</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="contact__information">
-                    <i class="uil uil-envelope contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">Email</h3>
-                        <span class="contact__subtitle">petkeiki@gmail.com</span>
+                <form action="mailto:skrillexkanht@gmail.com" method="POST" class="contact__form grid">
+
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Nombre</label>
+                            <input type="text" name="name" class="contact__input" required> 
+
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" name="email" class="contact__input" required> 
+                            
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact__information">
-                    <i class="uil uil-map-marker contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">Ubicación</h3>
-                        <span class="contact__subtitle">Bogotá - Colombia</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <form action="mailto:skrillexkanht@gmail.com" method="POST" class="contact__form grid">
-
-                <div class="contact__inputs grid">
                     <div class="contact__content">
-                        <label for="" class="contact__label">Nombre</label>
-                        <input type="text" name="name" class="contact__input" required> 
-
-                    </div>
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Email</label>
-                        <input type="email" name="email" class="contact__input" required> 
+                        <label for="" class="contact__label">Asunto</label>
+                        <input type="text" name="asunto" class="contact__input"> 
                         
                     </div>
-                </div>
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Mensaje
+                            <textarea name="" id="" cols="0" rows="7" class="contact__input" required></textarea> 
+                        </label>
+                        
+                    </div>
 
-                <div class="contact__content">
-                    <label for="" class="contact__label">Asunto</label>
-                    <input type="text" name="asunto" class="contact__input"> 
-                    
-                </div>
-                <div class="contact__content">
-                    <label for="" class="contact__label">Mensaje
-                        <textarea name="" id="" cols="0" rows="7" class="contact__input" required></textarea> 
-                    </label>
-                    
-                </div>
+                    <div>
+                        <button type="submit" class="button button--flex">
+                            Enviar
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
 
-                <div>
-                    <button type="submit" class="button button--flex">
-                        Enviar
-                        <i class="uil uil-message button__icon"></i>
-                    </button>
-                </div>
-
-            </form>
-        </div>
-    </section>
+                </form>
+            </div>
+        </section>
 
     <!--END MAIN-->
     </main>
