@@ -66,12 +66,6 @@ def log_in():
     nombre=s['Nombre']
     email = s['E-mail']
 
-    docs2= db.collection('Canelita').where("Nombre", "==", "Canelita").get()
-    for d in docs2:
-        s = d.to_dict()
-        print('Nombre: {} \n Edad: {} \n Sexo: {} \n Descripcion: {}\n Cualidades: {}\n'.format(s['Nombre'],s['Edad'], s['Sexo'],s['Descripcion'],s['Cualidades']))
-
-
     if s['Nickname'] == nickname and s['Contraseña'] == contraseña:
         y = 'Verdadero :)'
         return render_template("ver.html", Nombre=nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
@@ -89,8 +83,6 @@ def log_mascota(Nombre):
     descripcion=request.form['Descripcion']
     cualidades=request.form['Cualidades']
 
-    ids=sample(range(80,100),10)
-
     docs= db.collection('users').where("Nombre", "==", Nombre).get()
 
     for d in docs:
@@ -104,11 +96,33 @@ def log_mascota(Nombre):
     data_mascota = {'Nombre': nombre_mascota, 'Edad': edad, 'Sexo':sexo, 'Descripcion':descripcion, 'Cualidades':cualidades}
     db.collection('users').document(Nombre).collection(nombre_mascota).document('Datos').set(data_mascota)
 
-    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, Nombre=Nombre, Email=email, Nickname = nickname, Contraseña=contraseña, id=ids)
+    return render_template("ver.html", Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, Nombre=Nombre, Email=email, Nickname = nickname, Contraseña=contraseña)
 
+@app.route('/bus_mas/<string:Nombre>/', methods = ['POST'])
+def bus_mas(Nombre):
+    nombre_mascota=request.form['Name_mas']
+
+
+    funda_a_ref = db.collection('users').document(Nombre)
+    docs = funda_a_ref.collection(nombre_mascota).where("Nombre", "==", nombre_mascota).get()
+
+    #docs= db.collection(nombre_mascota).where("Nombre", "==", nombre_mascota).get()
+
+    for d in docs:
+        s = d.to_dict()
+        print('Nombre: {} \n Edad: {} \n Sexo: {} \n Descripcion: {}\n Cualidades: {}\n'.format(s['Nombre'],s['Edad'], s['Sexo'],s['Descripcion'],s['Cualidades']))
+
+    edad = s['Edad']
+    sexo = s['Sexo']
+    descripcion = s['Descripcion']
+    cualidades = s['Cualidades']
+
+    ids=random.randrange(0, 110, 1)
+    i=1
+
+    return render_template("ver.html", Nombre=Nombre, Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, id=ids, i=i)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-
 
 #python .\index.py

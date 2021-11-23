@@ -1151,7 +1151,31 @@ button{
 
 
 .agrega__mascota{
+    background-color: var(--home-color);
     text-align: center;
+    padding: 2.5rem 0 1.5rem 0;
+}
+
+
+.icon__add{
+    font-size: 5rem;
+    color: var(--first-color);
+}
+
+.icon__add:hover{
+    color: var(--first-color-alt);
+}
+
+.pets__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.pets__form{
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+
 }
 
 .pets__cards{
@@ -1243,6 +1267,7 @@ button{
     .perfil__data{
         flex-direction: column;
     }
+    
 }
 
 @media screen and (min-width: 500px){
@@ -1252,6 +1277,7 @@ button{
 }
 
 @media screen and (min-width: 768px){
+
     .pets__cards{
         flex-direction: row;
     }

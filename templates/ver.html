@@ -68,10 +68,16 @@
             </div>
         </section>
 
-        <section class="agrega__mascota section">
-            <a href="http://127.0.0.1:5000/registro_mascotas/{{Nombre}}/" class="button button--flex">
-                Agrega mascota<i class="uil uil-plus-circle button__icon"></i>
-            </a>
+        <section class="agrega__mascota ">
+
+            <div class="agrega__data container">
+                <p>Agrega un nuevo amigo</p>
+
+                <a href="http://127.0.0.1:5000/registro_mascotas/{{Nombre}}/">
+                    <i class="uil uil-plus-circle icon__add"></i>
+                </a>
+            </div>
+
         </section>
 
         <section class="pets section" id="pets">
@@ -81,34 +87,71 @@
 
             <div data-aos="fade-up" class="pets__container container grid">
 
-                <div class="pets__cards" id="cards">
+                <div class="pets__container container">
 
-                    <div class="pets__card"  id="card">
-                        
-                        <img src="../static/img/pets/1.jpg" alt="imagen">
+                    <div class="pets__form">
 
-                        <div class="pets__data" id="data">
-                            <h3 class="pets__name">Waltt</h3>
-                            <p class="pets__letter">Adulto</p>
+                        <form action="/bus_mas/{{Nombre}}/" method="POST" class="logusuario__form grid">
+
+                            <div class="logusuario__inputs grid">
+        
+                                <div class="logusuario__content" style="text-align: center;">
+                                    <!--NOMBRE-->
+                                    <h3><span>{{Nombre}}</span></h3>
+                                </div>
+    
+                                <div class="logusuario__content">
+                                    <!--NOMBRE-->
+                                    <label for="" class="logusuario__label">Nombre mascota</label>
+                                    <input type="text" name="Name_mas" id="usuario" class="logusuario__input" required></br>
+    
+                                </div>
+                            </div>
+    
+                            <div>
+                                <!--<input type="submit" value="Registrar" class="button button--flex" id="Registrar">-->
+                                <button value="Buscar" class="button button--flex">Buscar</button>
+                            </div>
+            
+                        </form>
+
+                    </div>
+
+
+                    <div class="pets__cards" id="cards">
+
+                        <div class="pets__card"  id="card">
+                            
+                            <img src="/static/img/pets/{{i}}.jpg" alt="">
+    
+                            <div class="pets__data" id="data">
+                                <h3 class="pets__name">Nombre: {{Nombre_masc}}</h3>
+                                <p class="pets__letter">Edad: {{Edad}} año(s)</p>
+                                <p class="pets__letter">Sexo: {{Sexo}}</p>
+                                <p class="pets__letter">{{Descripcion}}</p>
+                                <p class="pets__letter">{{Cualidades}}</p>
+                            </div>
+    
+                            <div class="pets__opc" id="opci">
+                                <a href="" target="blank" class="opc1" id="opc">
+                                    <i class="uil uil-comment-heart pets__icon"></i>
+                                </a>
+                                <a href="" target="blank" class="opc2" id="opc">
+                                    <i class="uil uil-bookmark pets__icon"></i>
+                                </a>
+                            </div>
                         </div>
-
-                        <div class="pets__opc" id="opci">
-                            <a href="" target="blank" class="opc1" id="opc">
-                                <i class="uil uil-comment-heart pets__icon"></i>
-                            </a>
-                            <a href="" target="blank" class="opc2" id="opc">
-                                <i class="uil uil-bookmark pets__icon"></i>
-                            </a>
-                        </div>
+    
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <button id="btn">add</button>
+        <h1>{{id}}</h1>
+        <button id="btn">Agrega perro</button>
 
         <script>
+
             $("#btn").addEventListener("click",function(){
 
                 var img=document.createElement('img');
@@ -116,26 +159,25 @@
 
                 var card=document.createElement('div');
                 card.setAttribute("class", "pets__card");
-                card.setAttribute("id", "card1");
+                card.setAttribute("id", "card{{id}}");
 
                 var data=document.createElement('div');
                 data.setAttribute("class","pets__data")
-                data.setAttribute("id","data1")
+                data.setAttribute("id","data{{id}}")
 
                 var opcion=document.createElement('div');
                 opcion.setAttribute("class","pets__opc")
-                opcion.setAttribute("id","opci1")
+                opcion.setAttribute("id","opci{{id}}")
 
                 var Name=document.createElement('h3');
                 Name.setAttribute("class", "pets__name");
-                var n=document.createTextNode("Nombre");
+                var n=document.createTextNode("{{Nombre_masc}}");
                 Name.appendChild(n);
 
                 var Edad=document.createElement('p');
                 Edad.setAttribute("class", "pets__letter");
-                var e=document.createTextNode("Edad");
+                var e=document.createTextNode("{{Edad}} Año(s)");
                 Edad.appendChild(e);
-
 
                 var link1_1=document.createElement('i');
                 link1_1.setAttribute("class","uil uil-comment-heart pets__icon");
@@ -152,15 +194,15 @@
 
                 $("#cards").appendChild(card);
 
-                $("#card1").appendChild(img);
-                $("#card1").appendChild(data);
-                $("#card1").appendChild(opcion);
+                $("#card{{id}}").appendChild(img);
+                $("#card{{id}}").appendChild(data);
+                $("#card{{id}}").appendChild(opcion);
 
-                $("#data1").appendChild(Name);
-                $("#data1").appendChild(Edad);
+                $("#data{{id}}").appendChild(Name);
+                $("#data{{id}}").appendChild(Edad);
 
-                $("#opci1").appendChild(link1);
-                $("#opci1").appendChild(link2);
+                $("#opci{{id}}").appendChild(link1);
+                $("#opci{{id}}").appendChild(link2);
 
                 $("#opc1").appendChild(link1_1);
                 $("#opc2").appendChild(link1_2);
@@ -189,7 +231,7 @@
                     </div>
 
                     <div class="perfil__insignia">
-                        <img src="../static/img/Insignia.png" alt="imagen">
+                        <img src="/static/img/Insignia.png" alt="">
                     </div>
                 </div>
 
