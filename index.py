@@ -3,9 +3,16 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 import random
 from flask import Flask, render_template, request
+import os
 
-cred = credentials.Certificate("serviceAccountKey.json")
+
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+my_file = os.path.join(THIS_FOLDER, 'serviceAccountKey.json')
+
+
+cred = credentials.Certificate(my_file)
 firebase_admin.initialize_app(cred)
+
 
 db = firestore.client()
 
@@ -120,10 +127,22 @@ def bus_mas(Nombre):
     descripcion = s['Descripcion']
     cualidades = s['Cualidades']
 
+    docs2= db.collection('users').where("Nombre", "==", Nombre).get()
+
+    for d in docs2:
+        s = d.to_dict()
+        print('Nombre: {} \n Correo: {} \n Nickname: {} \n Contraseña: {}\n'.format(s['Nombre'],s['E-mail'], s['Nickname'],s['Contraseña']))
+
+    nickname=s['Nickname']
+    email = s['E-mail']
+    contraseña=s['Contraseña']
+
+
+
     ids=random.randrange(0, 110, 1)
     img=nombre_mascota
 
-    return render_template("ver.html", Nombre=Nombre, Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, id=ids, img=img)
+    return render_template("ver.html", Nombre=Nombre, Email=email, Nickname = nickname, Contraseña=contraseña, Nombre_masc=nombre_mascota, Edad=edad, Sexo=sexo, Descripcion=descripcion, Cualidades=cualidades, id=ids, img=img)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
